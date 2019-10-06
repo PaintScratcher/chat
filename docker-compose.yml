@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ssl:
+    image: chatssl
+    build:
+      context: chat-ssl
+    ports:
+    - "443:443"
+  standard:
+    image: chat
+    build:
+      context: chat
+    ports:
+    - "8080:8080"
